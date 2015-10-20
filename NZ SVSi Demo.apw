@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace [
+
+<!-- Common Elements -->
+<!ELEMENT Identifier (#PCDATA)>
+<!ELEMENT Comments (#PCDATA)>
+<!ELEMENT MasterDirectory (#PCDATA)>
+<!ELEMENT CreationDate (#PCDATA)>
+
+<!-- Workspace Elements-->
+<!ELEMENT Workspace ( Identifier,
+               CreateVersion,
+               PJS_File?,
+               PJS_ConvertDate?,
+               PJS_CreateDate?,
+               Comments?,
+               Project*)>
+
+<!ATTLIST Workspace 
+      CurrentVersion CDATA   #REQUIRED> 
+
+<!ELEMENT CreateVersion     (#PCDATA)>
+
+
+<!-- Conversion data only: only included for files converted from the old .pjs database -->
+<!ELEMENT PJS_File (#PCDATA)>
+<!ELEMENT PJS_ConvertDate (#PCDATA)>
+<!ELEMENT PJS_CreateDate (#PCDATA)>
+
+<!ELEMENT Project ( Identifier,
+               Designer?,
+               DealerID?,
+               SalesOrder?,
+               PurchaseOrder?,
+               Comments?,
+               System*)>
+
+<!ELEMENT Designer (#PCDATA)>
+<!ELEMENT DealerID (#PCDATA)>
+<!ELEMENT SalesOrder (#PCDATA)>
+<!ELEMENT PurchaseOrder (#PCDATA)>
+
+
+<!ELEMENT System  (  Identifier,
+                 SysID,
+                 TransTCPIP?,
+                 TransSerial?,
+                 TransTCPIPEx?,
+                 TransSerialEx?,
+                 TransUSBEx?,
+                 TransVNMEx?,
+                 VirtualNetLinxMasterFlag?,
+                 VNMSystemID?,
+                 VNMIPAddress?,
+                 VNMMaskAddress?,
+                 UserName?,
+                 Password?,
+                 Comments?,
+                 File*)>
+
+<!ATTLIST System
+      IsActive   (true | false)   "false"
+      Platform   (Axcess | Netlinx)   "Axcess"
+      Transport   (Serial | Modem | TCPIP) "Serial"
+      TransportEx   (Serial | USB | TCPIP | VNM) "Serial">
+
+<!ELEMENT SysID (#PCDATA)>
+<!ELEMENT TransSerial (#PCDATA)>
+<!ELEMENT TransTCPIP (#PCDATA)>
+<!ELEMENT TransTCPIPEx (#PCDATA)>
+<!ELEMENT TransSerialEx (#PCDATA)>
+<!ELEMENT TransUSBEx (#PCDATA)>
+<!ELEMENT TransVNMEx (#PCDATA)>
+<!ELEMENT VNMSystemID (#PCDATA)>
+<!ELEMENT VNMIPAddress (#PCDATA)>
+<!ELEMENT VNMMaskAddress (#PCDATA)>
+<!ELEMENT VirtualNetLinxMasterFlag (#PCDATA)>
+<!ELEMENT UserName (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+
+
+<!ELEMENT File ( Identifier,
+               FilePathName,
+               Comments?,
+               MasterDirectory?,
+               DeviceMap*,
+               IRDB*)>
+
+<!ATTLIST File 
+       Type (Source | MasterSrc | Include | Module | AXB | IR | TPD | TP4 | TP5 | KPD | TKO | AMX_IR_DB | IRN_DB | Other | DUET | TOK | TKN | KPB | XDD ) "Other"
+       CompileType (Axcess | Netlinx | None) "None"> 
+
+<!ELEMENT FilePathName	(#PCDATA)>
+                            
+<!ELEMENT DeviceMap (DevName)>
+       <!ATTLIST DeviceMap DevAddr CDATA #REQUIRED>
+
+       <!ELEMENT DevName (#PCDATA)>
+
+<!ELEMENT IRDB    (Property,
+                 DOSName,
+                 UserDBPathName,
+                 Notes)>
+       <!ATTLIST IRDB DBKey CDATA #REQUIRED>
+
+       <!ELEMENT Property (#PCDATA)>
+       <!ELEMENT DOSName (#PCDATA)>
+       <!ELEMENT UserDBPathName (#PCDATA)>
+       <!ELEMENT Notes (#PCDATA)>
+]>
+
+<Workspace CurrentVersion="4.0"><Identifier>NZ SVSi Demo</Identifier>
+<CreateVersion>4.0</CreateVersion>
+<PJS_File></PJS_File>
+<PJS_ConvertDate></PJS_ConvertDate>
+<PJS_CreateDate></PJS_CreateDate>
+<Comments></Comments>
+<Project><Identifier>SVSi Demo</Identifier>
+<Designer></Designer>
+<DealerID></DealerID>
+<SalesOrder></SalesOrder>
+<PurchaseOrder></PurchaseOrder>
+<Comments></Comments>
+<System IsActive="true" Platform="Netlinx" Transport="Serial" TransportEx="TCPIP"><Identifier>SVSi Demo</Identifier>
+<SysID>0</SysID>
+<TransTCPIP>0.0.0.0</TransTCPIP>
+<TransSerial>COM1,115200,8,None,1,None</TransSerial>
+<TransTCPIPEx>192.168.15.21|1319|1| ||</TransTCPIPEx>
+<TransSerialEx>COM4|115200|8|None|1|None||</TransSerialEx>
+<TransUSBEx>|||||</TransUSBEx>
+<TransVNMEx>10.0.0.1|1|&lt;Default&gt;</TransVNMEx>
+<VirtualNetLinxMasterFlag>false</VirtualNetLinxMasterFlag>
+<VNMSystemID>1</VNMSystemID>
+<VNMIPAddress>10.0.0.1</VNMIPAddress>
+<VNMMaskAddress>255.255.255.0</VNMMaskAddress>
+<UserName></UserName>
+<Password></Password>
+<Comments></Comments>
+<File CompileType="Netlinx" Type="MasterSrc"><Identifier>Main</Identifier>
+<FilePathName>Main.axs</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Demo Brief</Identifier>
+<FilePathName>other\Demo Brief.docx</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Facilities Integrate RPM-RMS</Identifier>
+<FilePathName>other\Facilities Integrate RPM-RMS.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Facilities Integrate SVSI</Identifier>
+<FilePathName>other\Facilities Integrate SVSI.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>N1000N2000SeriesAPICommandListRev1.0</Identifier>
+<FilePathName>other\N1000N2000SeriesAPICommandListRev1.0.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>N2000UserManualRev3.0</Identifier>
+<FilePathName>other\N2000UserManualRev3.0.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>N8000SeriesAPICommandListRev1.1</Identifier>
+<FilePathName>other\N8000SeriesAPICommandListRev1.1.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>Network</Identifier>
+<FilePathName>other\Network.pdf</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>SVSi Models detail &amp; differences</Identifier>
+<FilePathName>other\SVSi Models detail &amp; differences.txt</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>SVSi Notes for N-Command control</Identifier>
+<FilePathName>other\SVSi Notes for N-Command control.txt</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="Other"><Identifier>SVSi Notes for Video Wall Configs</Identifier>
+<FilePathName>other\SVSi Notes for Video Wall Configs.txt</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="TP5"><Identifier>Facilities NZ MXD-1001</Identifier>
+<FilePathName>ui\Facilities NZ MXD-1001.TP5</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvTP"><DevName>dvTP</DevName>
+</DeviceMap>
+</File>
+</System>
+</Project>
+</Workspace>
