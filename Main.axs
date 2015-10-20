@@ -251,11 +251,6 @@ data_event[dvSvsiControl]
 		// Status Packet Sample: <status>169.254.237.181;1;0;0;0;live;0;6995;0;1;0;0;720p60</status>
 		// Status Packet Order: <status>IP address; communication;dvioff;scaler;display state;mode;audio state;video stream;audiostream;playlist;colorspace;hdmiaudio;resolution</status>
 		// we would need to drop <status> and then split on ';'
-		// I'm not sure how to do this best in netlinx
-		// we will also need to be able to identify the stream numbers, because
-		// this is what you get in the status updates
-		// if we can match the stream number to the source, this would be good
-		// for feedback
 		
 		// this is an example encoder status:
 		// Status Packet Resp <status>169.254.114.220;1;0;0;0;live;1;300;0;1;0;0;720p60</status>
